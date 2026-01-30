@@ -1,0 +1,21 @@
+<h2>Category Master</h2>
+
+<form method="POST" action="/categories/add">
+  <input type="text" name="category_name" placeholder="Category Name" required />
+  <button type="submit">Add</button>
+</form>
+
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+  </tr>
+  <% categories.forEach(c => { %>
+  <tr>
+    <td><%= c.category_id %></td>
+    <td><%= c.category_name %></td>
+  </tr>
+  <% }) %>
+</table>
+
+<a href="/products">Go to Products</a>

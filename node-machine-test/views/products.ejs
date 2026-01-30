@@ -1,0 +1,30 @@
+<h2>Product Master</h2>
+
+<form method="POST" action="/products/add">
+  <input type="text" name="product_name" placeholder="Product Name" required />
+  <input type="number" name="category_id" placeholder="Category ID" required />
+  <button type="submit">Add</button>
+</form>
+
+<table border="1">
+  <tr>
+    <th>Product ID</th>
+    <th>Product Name</th>
+    <th>Category ID</th>
+    <th>Category Name</th>
+  </tr>
+  <% products.forEach(p => { %>
+  <tr>
+    <td><%= p.product_id %></td>
+    <td><%= p.product_name %></td>
+    <td><%= p.category_id %></td>
+    <td><%= p.category_name %></td>
+  </tr>
+  <% }) %>
+</table>
+
+<a href="/products?page=<%= page - 1 %>">Prev</a>
+<a href="/products?page=<%= page + 1 %>">Next</a>
+
+<br /><br />
+<a href="/categories">Back to Categories</a>
